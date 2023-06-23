@@ -1,0 +1,107 @@
+// Imports
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+// Variables
+
+$white: #F2F2F2;
+$white-second: #E9E9E9;
+$text-color: #303030;
+$blue-gradient: linear-gradient(136deg, #3C8AE5 0%, #327ED7 100%);
+
+// Global config
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins";
+}
+
+body{
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+h1{
+    font-size: 48px;
+    line-height: 120%;
+}
+
+p{
+    line-height: 160%;
+}
+
+.app{
+    display: grid;
+    position: relative;
+    width: 100vw;
+    min-height: 100%;
+    place-items: center;
+}
+
+.button-link{
+    display: inline-block;
+    padding: 16px 40px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: .4s;
+}
+
+.primary-button{
+    background: $blue-gradient;
+    color: $white;
+    &:hover{
+        filter: brightness(1.1);
+    }
+}
+
+.secondary-button{
+    background: $white-second;
+    color: $text-color;
+    &:hover{
+        filter: brightness(0.9);
+    }
+}
+
+// Logged page
+
+.logged-container{
+    display: grid;
+    place-items: center;
+    background: $white;
+    padding: 50px 40px;
+    width: 100%;
+    height: 100vh;
+    
+    .logged-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        max-width: 1280px;
+        width: 100%;
+        height: 100%;
+        gap: 96px;
+
+        img{
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .logged-content-text{
+            max-width: 495px;
+            h1{
+                margin-bottom: 18px;
+            }
+            .links{
+                margin-top: 32px;
+                a:last-child{
+                    margin-left: 32px;
+                }
+            }
+        }
+    }
+}
