@@ -5,7 +5,9 @@
 
 $white: #F2F2F2;
 $white-second: #E9E9E9;
+$white-third: #B3B3B3;
 $text-color: #303030;
+$blue: #327ED7;
 $blue-gradient: linear-gradient(136deg, #3C8AE5 0%, #327ED7 100%);
 
 // Global config
@@ -15,14 +17,15 @@ $blue-gradient: linear-gradient(136deg, #3C8AE5 0%, #327ED7 100%);
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    color: $text-color;
     font-family: "Poppins";
 }
 
 body{
+    background: $white;
     position: relative;
     width: 100vw;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 h1{
@@ -38,9 +41,22 @@ p{
     display: grid;
     position: relative;
     width: 100vw;
-    min-height: 100%;
+    height: 100vh;
     place-items: center;
+    overflow: hidden;
 }
+
+.hidden-page{
+    display: block;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.page{
+    transition: 1s;
+}
+  
 
 .button-link{
     display: inline-block;
@@ -48,6 +64,17 @@ p{
     font-size: 16px;
     border-radius: 8px;
     transition: .4s;
+}
+
+.input{
+    max-width: 364px;
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    border: 2px solid $white-second;
+    background: transparent;
+    padding: 8px;
+    cursor: pointer;
 }
 
 .primary-button{
@@ -66,12 +93,108 @@ p{
     }
 }
 
-// Logged page
+// Login and register page
 
+.login-register-container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 72px;
+
+    background: url(../imgs/bgloginregister.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+
+    .form-container{
+        display: grid;
+        place-items: center;
+        background: $white;
+        width: 100%;
+        max-width: 556px;
+        height: calc(100% - 100px);
+        border-radius: 32px;
+        padding: 32px 16px;
+
+        .login-form-container{
+            h2{
+                margin-bottom: 56px;
+                font-size: 32px;
+            }
+
+            form label{
+                display: block;
+                margin-bottom: 16px;
+            }
+
+            .division{
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 16px 0;
+                color: $white-third;
+                text-align: center;
+                background: $white;
+
+                span{
+                    background: $white;
+                    z-index: 2;
+                    padding: 0 8px;
+                    color: $white-third;
+                }
+                
+                hr{
+                    width: 100%;
+                    position: absolute;
+                    background: $white-third;
+                }
+            }
+
+            .button-link{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid $white-second;
+                margin-bottom: 16px;
+
+                svg{
+                    margin-right: 12px;
+                }
+            }
+            p:last-child{
+                text-align: center;
+
+                a{
+                    color: $blue;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .login-register-text-content{
+        max-width: 570px;
+        margin-top: -200px;
+        h1{
+            color: $white;
+            font-size: 64px;
+            margin-bottom: 24px;
+        }
+        p{
+            color: $white;
+            font-size: 24px;
+            max-width: 470px;
+        }
+    }
+}
+
+// Logged page
 .logged-container{
     display: grid;
     place-items: center;
-    background: $white;
     padding: 50px 40px;
     width: 100%;
     height: 100vh;
