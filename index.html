@@ -9,6 +9,8 @@
 <body>
     <div class="app">
 
+        <div class="msg"></div>
+
         <!-- Página de login e registro -->
         <div class="login-register-container show-page page">
 
@@ -17,14 +19,14 @@
                 <div class="login-form-container">
                     <h2>Entrar</h2>
 
-                    <form>
+                    <form class="login-form">
                         <label>
                             <p>E-mail</p>
-                            <input type="email" class="input">
+                            <input type="email" class="input input-email">
                         </label>
                         <label>
                             <p>Senha</p>
-                            <input type="password" class="input">
+                            <input type="password" class="input input-pass">
                         </label>
                         <input type="submit" value="Entrar" class="input primary-button button-link">
                     </form>
@@ -63,9 +65,9 @@
         </div>
 
         <!-- Página de usuário logado -->
-        <div class="logged-container">
+        <div class="logged-container page hidden-page">
             
-            <div class="logged-content hidden-page page">
+            <div class="logged-content page">
 
                 <img src="./imgs/logged-photo.png" alt="Camera no meio de plantas">
                 <div class="logged-content-text">
@@ -74,7 +76,7 @@
                     
                     <div class="links">
                         <a href="" class="secondary-button button-link">Testar novamente</a>
-                        <a href="" class="primary-button button-link">Visitar portifólio</a>
+                        <a href="https://alissondofront.vercel.app/" target="_blank" class="primary-button button-link">Visitar portifólio</a>
                     </div>
                 </div>
 
@@ -84,6 +86,10 @@
 
     </div>
 
+    <script src="./db/db.js"></script>
+    <script src="./js/pagesChanger.js"></script>
+    <script src="./js/msg.js"></script>
+    <script src="./js/login.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

@@ -1,4 +1,7 @@
 (function(){
+
+    // Interrupting browser reloads
+
     const body = document.querySelector("body")
     const links = document.querySelectorAll("a")
 
@@ -11,4 +14,7 @@
             e.preventDefault()
         })
     })
+
+    login()
+
 })()
