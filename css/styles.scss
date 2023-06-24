@@ -60,6 +60,7 @@ p{
 
 .page{
     transition: 1s;
+    transition-delay: .2s;
 }
   
 .msg{
@@ -76,7 +77,7 @@ p{
     transform: translateY(-200px);
     transition: 1s;
     transition-delay: .5s;
-
+    z-index: 10;
     p{
         color: $white;
     }

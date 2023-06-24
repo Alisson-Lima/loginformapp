@@ -15,7 +15,7 @@ function pagesChanger(page = String){
         logged.classList.add("hidden-page")
         logged.classList.remove("show-page")
         loginOrRegister.classList.add("show-page")
-        loginOrRegister.classList.revome("hidden-page")
+        loginOrRegister.classList.remove("hidden-page")
     }
 
 }

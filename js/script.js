@@ -3,11 +3,7 @@
     // Interrupting browser reloads
 
     const body = document.querySelector("body")
-    const links = document.querySelectorAll("a")
-
-    body.addEventListener("submit", e=>{
-        e.preventDefault()
-    })
+    const links = document.querySelectorAll(".no-reload")
 
     links.forEach(link =>{
         link.addEventListener("click", e=>{
@@ -16,5 +12,13 @@
     })
 
     login()
+
+    // Restart project and portfolio links
+    const restartProjectBtn = document.querySelector(".links .secondary-button")
+
+    restartProjectBtn.addEventListener("click", ()=>{
+        pagesChanger("loginOrRegister")
+    })
+
 
 })()

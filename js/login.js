@@ -10,6 +10,8 @@ function login() {
     // Getting user's info
     loginForm.addEventListener("submit", e =>{
 
+        e.preventDefault()
+
         const email = inputEmail.value
         const pass = inputPass.value
 
@@ -32,13 +34,14 @@ function login() {
             return
         }else if(dbUsersArr.length > 0){
             let notExist = 0
-            dbUsersArr.map((dbUser) =>{
+            dbUsersArr.forEach((dbUser) =>{
                 const existUser = dbUser.email === email
                 if(existUser){
                     const correctPass = dbUser.password === pass 
                     if(correctPass){
+                        message(`Usuário autenticado! Seja bem-vindo ${dbUser.name}`, true)
                         pagesChanger("logged")
-                        message("Usuário autenticado!", true)
+                        cleanInputs()
                         return
                     }
                     message("Senha ou usuário incorretos", false)
@@ -46,21 +49,27 @@ function login() {
                 }else{
                     notExist++
                 }
+
             })
-            if(notExist > 0){
+            if(notExist >= dbUsersArr.length){
                 message("O usuário não existe", false)
+                return
             }
-            return
         }
 
-        const user = {
-            email: inputEmail.value,
-            password: inputPass.value,
-        }
+        // const user = {
+        //     email: inputEmail.value,
+        //     password: inputPass.value,
+        // }
 
-        console.log(user)
+        // console.log(user)
 
     })
+
+    const cleanInputs = ()=>{
+        inputEmail.value = ""
+        inputPass.value = ""
+    }
 
 
 }

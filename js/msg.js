@@ -1,6 +1,5 @@
 function message(msg = String, type = Boolean){
 
-    const app = document.querySelector(".app")
     const msgContainer = document.querySelector(".msg")
 
     msgContainer.innerHTML = `<p>${msg}</p>`
