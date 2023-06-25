@@ -63,7 +63,6 @@ p {
   text-align: center;
   transform: translateY(-200px);
   transition: 1s;
-  transition-delay: 0.5s;
   z-index: 10;
 }
 .msg p {
@@ -136,23 +135,34 @@ p {
   height: 100vh;
 }
 .login-register-container .form-container {
-  display: grid;
-  place-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #F2F2F2;
   max-width: 556px;
   height: calc(100% - 100px);
   border-radius: 32px;
   padding: 32px 96px;
+  overflow: hidden;
 }
-.login-register-container .form-container .login-form-container h2 {
-  margin-bottom: 56px;
-  font-size: 32px;
+.login-register-container .form-container .login-form-container, .login-register-container .form-container .register-form-container {
+  min-width: 300px;
+  max-width: 364px;
+  transition: 0.4s;
 }
-.login-register-container .form-container .login-form-container form label {
-  display: block;
-  margin-bottom: 16px;
+.login-register-container .form-container .register-form-container {
+  opacity: 0;
+  position: absolute;
+  transform: translateX(500px);
 }
-.login-register-container .form-container .login-form-container .division {
+.login-register-container .form-container .register-form-container .register-form .next-button-register-form {
+  position: relative;
+  cursor: pointer;
+  width: calc(50% - 12px);
+  left: calc(50% + 12px);
+}
+.login-register-container .form-container .division {
   position: relative;
   display: flex;
   justify-content: center;
@@ -162,33 +172,52 @@ p {
   text-align: center;
   background: #F2F2F2;
 }
-.login-register-container .form-container .login-form-container .division span {
+.login-register-container .form-container .division span {
   background: #F2F2F2;
   z-index: 2;
   padding: 0 8px;
   color: #B3B3B3;
 }
-.login-register-container .form-container .login-form-container .division hr {
+.login-register-container .form-container .division hr {
   width: 100%;
   position: absolute;
   background: #B3B3B3;
 }
-.login-register-container .form-container .login-form-container .button-link {
+.login-register-container .form-container .button-link {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid #E9E9E9;
   margin-bottom: 16px;
 }
-.login-register-container .form-container .login-form-container .button-link svg {
+.login-register-container .form-container .button-link svg {
   margin-right: 12px;
 }
-.login-register-container .form-container .login-form-container p:last-child {
+.login-register-container .form-container p:last-child {
   text-align: center;
 }
-.login-register-container .form-container .login-form-container p:last-child a {
+.login-register-container .form-container p:last-child a {
   color: #327ED7;
   font-weight: 500;
+}
+.login-register-container .form-container p:last-child a:hover {
+  text-decoration: underline;
+}
+.login-register-container .form-container h2 {
+  margin-bottom: 56px;
+  font-size: 32px;
+}
+.login-register-container .form-container form label {
+  display: block;
+  margin-bottom: 16px;
+}
+.login-register-container .form-container.active .register-form-container {
+  transform: translateX(0);
+  opacity: 1;
+}
+.login-register-container .form-container.active .login-form-container {
+  transform: translateX(-400px);
+  opacity: 0;
 }
 .login-register-container .login-register-text-content {
   max-width: 570px;

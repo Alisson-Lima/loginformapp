@@ -4,14 +4,12 @@ function login() {
     const loginForm = document.querySelector(".login-form")
     const inputEmail = document.querySelector(".login-form .input-email")
     const inputPass = document.querySelector(".login-form .input-pass")
-    const btnLoginForm = document.querySelector(".login-form .button-link")
     
-    
-    // Getting user's info
     loginForm.addEventListener("submit", e =>{
-
+        
         e.preventDefault()
-
+        
+        // Getting user's info in inputs
         const email = inputEmail.value
         const pass = inputPass.value
 
@@ -27,45 +25,51 @@ function login() {
 
 
         // Validating infos
+
+        // Get users from db
         const dbUsersArr = users()
         
         if(dbUsersArr.length === 0){
             message("O banco de dados de usuários está vazio.", false)
             return
-        }else if(dbUsersArr.length > 0){
-            let notExist = 0
-            dbUsersArr.forEach((dbUser) =>{
-                const existUser = dbUser.email === email
-                if(existUser){
-                    const correctPass = dbUser.password === pass 
-                    if(correctPass){
-                        message(`Usuário autenticado! Seja bem-vindo ${dbUser.name}`, true)
-                        pagesChanger("logged")
-                        cleanInputs()
+        }else{
+
+            let emailDoNotExist = 0
+            // debugger
+            dbUsersArr.forEach(dbUser => {
+
+                // Verifying if email exist
+                
+                if(dbUser.email.includes(email)){
+                    
+                    // Verifying if password is correct
+                    if(!(dbUser.password.includes(pass))){
+                        message("Senha ou usuário incorretos", false)
                         return
                     }
-                    message("Senha ou usuário incorretos", false)
+
+                    // Success message and changing pages
+                    message(`Usuário autenticado! Seja bem-vindo ${dbUser.name}`, true)
+                    pagesChanger("logged")
+                    cleanInputs()
                     return
+                    
                 }else{
-                    notExist++
+                    emailDoNotExist++
                 }
 
             })
-            if(notExist >= dbUsersArr.length){
+
+            if(emailDoNotExist === dbUsersArr.length){
                 message("O usuário não existe", false)
                 return
             }
         }
 
-        // const user = {
-        //     email: inputEmail.value,
-        //     password: inputPass.value,
-        // }
-
-        // console.log(user)
-
     })
 
+
+    // Clean inputs
     const cleanInputs = ()=>{
         inputEmail.value = ""
         inputPass.value = ""

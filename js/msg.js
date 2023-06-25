@@ -10,8 +10,7 @@ function message(msg = String, type = Boolean){
         msgContainer.classList.add("error-msg")
     }
     setTimeout(()=>{
-        msgContainer.classList.remove("success-msg")
-        msgContainer.classList.remove("error-msg")
+        msgContainer.classList.remove("success-msg", "error-msg")
     }, 3000)
 
 
