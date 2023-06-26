@@ -28,7 +28,7 @@
                             <p>Senha</p>
                             <input type="password" class="input input-pass" placeholder="Digite sua senha">
                         </label>
-                        <input type="submit" value="Entrar" class="input primary-button button-link">
+                        <input type="submit" value="Entrar" class="primary-button button-link">
                     </form>
                     <span class="division">
                         <hr>
@@ -58,24 +58,64 @@
                 <div class="register-form-container ">
                     <h2>Registrar-se</h2>
 
-                    <form class="register-form">
+                    <div class="progress-bar-register">
+                        <span class="circle active">1</span>
+                        <span class="line"></span>
+                        <span class="circle">2</span>
+                        <span class="line"></span>
+                        <span class="circle">3</span>
+                    </div>
 
-                        <label>
-                            <p>Nome</p>
-                            <input type="email" class="input input-email" placeholder="Digite seu nome">
-                        </label>
-                        <label>
-                            <p>E-mail</p>
-                            <input type="email" class="input input-email" placeholder="exemplo@email.com">
-                        </label>
+                    <div class="register-forms-container">
+                        <form class="register-form step-1">
 
-                        <input type="submit" value="Avançar" class=" primary-button button-link next-button-register-form">
-                    </form>
+                            <label>
+                                <p>Nome</p>
+                                <input type="text" class="input input-name" placeholder="Digite seu nome">
+                            </label>
+                            <label>
+                                <p>E-mail</p>
+                                <input type="email" class="input input-email" placeholder="exemplo@email.com">
+                            </label>
+    
+                            <input type="submit" value="Avançar" class=" primary-button button-link next-button-register-form">
+                        </form>
+                        <form class="register-form step-2 hidden-form">
+    
+                            <label>
+                                <p>Senha</p>
+                                <input type="password" class="input input-password-register">
+                            </label>
+                            <label>
+                                <p>Confirmar senha</p>
+                                <input type="password" class="input input-confirm-password-register">
+                            </label>
+                            <div class="register-form-buttons-navigation">
+                                <input type="submit" value="Voltar" class="secondary-button button-link back-button-register-form">
+                                <input type="submit" value="Avançar" class="primary-button button-link next-button-register-form">
+                            </div>
+                        </form>                 
+                        <form class="register-form step-3 hidden-form">
+                            <label>
+                                <p>E-email de recuperação</p>
+                                <input type="email" class="input input-recovery-email">
+                            </label>
+                            <label>
+                                <p>Confirmar e-mail de recuperação</p>
+                                <input type="email" class="input input-confirm-recovery-email">
+                            </label>
+                            <div class="register-form-buttons-navigation">
+                                <input type="submit" value="Voltar" class="secondary-button button-link back-button-register-form">
+                                <input type="submit" value="Registrar" class="primary-button button-link next-button-register-form">
+                            </div>
+                        </form>
+                    </div>
 
                     <span class="division">
                         <hr>
                         <span>ou</span>
                     </span>
+
                     <a href="" class="button-link no-reload">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="Google - Original" clip-path="url(#clip0_656_2)">
@@ -131,6 +171,7 @@
     <script src="./js/pagesChanger.js"></script>
     <script src="./js/msg.js"></script>
     <script src="./js/login.js"></script>
+    <script src="./js/register.js"></script>
     <script src="./js/formChanger.js"></script>
     <script src="./js/script.js"></script>
 </body>

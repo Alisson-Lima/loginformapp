@@ -1,4 +1,5 @@
-function users(newUser){
+function users(newUser = null){
+
     const users = [
         {
             name: "admin",
@@ -6,13 +7,13 @@ function users(newUser){
             password: "admin123" 
         },
         {
-            name: "Lucas",
-            email: "lucas@gmail.com",
-            password: "lucas123" 
+            name: "Alisson",
+            email: "alisson@gmail.com",
+            password: "alisson123" 
         }
     ]
 
-    if(newUser){
+    if(newUser != null){
         users.push(newUser)
         return
     }

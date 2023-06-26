@@ -14,6 +14,7 @@
     
     // Start login and register
     login()
+    register()
 
 
 
