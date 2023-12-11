@@ -1,3 +1,5 @@
+![Thumbnail](./imgs/bg-photo-database-login.jpg)
+
 # Photo Database Login Page
 
 Este projeto é uma página de login para um site de banco de imagens chamado Photo Database. Foi desenvolvido como uma prática para manipulação do DOM e o uso de formulários, utilizando HTML5, CSS3 com Sass e Javascript.
